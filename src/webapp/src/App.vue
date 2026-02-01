@@ -1,18 +1,11 @@
-<script setup>
-import SidebarMenu from './components/SidebarMenu.vue'
-import PageContent from './components/PageContent.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <main>
-    <SidebarMenu/>
-    <PageContent/>
-  </main>
+  <h1>You did it!</h1>
+  <p>
+    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
+    documentation
+  </p>
 </template>
 
-<style scoped>
-main {
-  display: flex;
-  flex-direction: row;
-}
-</style>
+<style scoped></style>
