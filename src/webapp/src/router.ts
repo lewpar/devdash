@@ -3,11 +3,11 @@ import Dashboard from './components/pages/Dashboard.vue';
 
 const routes = [
   { path: '/', component: Dashboard }
-]
+];
 
 const router = createRouter({
   history: createMemoryHistory(),
   routes,
-})
+});
 
-export default router
+export default router;

@@ -4,7 +4,7 @@
 <template>
     <ul class="sidebar-menu">
         <li class="sidebar-menu-item">
-            <a href="/">Dashboard</a>
+            <RouterLink to="/">Dashboard</RouterLink>
         </li>
     </ul>
 </template>
