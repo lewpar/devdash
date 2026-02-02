@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ENV_PATH=".venv"
 ACTIVATE_PATH="$ENV_PATH/bin/activate"
 
@@ -23,9 +25,9 @@ echo "> Virtual enviroment activated."
 echo "Checking for installed dependencies.."
 
 pip show --quiet "fastapi"
+exit_status=$?
 
-# $? returns the exit code for the last command run.
-if [[ ! $?  ]]; then
+if [ $exit_status -ne 0 ]; then
     echo "FastAPI dependency missing, installing.."
     pip install --quiet "fastapi[standard]"
 fi
