@@ -32,6 +32,14 @@ if [ $exit_status -ne 0 ]; then
     pip install --quiet "fastapi[standard]"
 fi
 
+pip show --quiet "psutil"
+exit_status=$?
+
+if [ $exit_status -ne 0 ]; then
+    echo "psutil dependency missing, installing.."
+    pip install --quiet "psutil"
+fi
+
 echo "> Done checking dependencies."
 
 echo "> Completed setting up virtual environment."
