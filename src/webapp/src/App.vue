@@ -11,7 +11,16 @@ import SidebarMenu from './components/SidebarMenu.vue';
 
 <style scoped>
 main {
+    flex: 1;
+
     display: flex;
     flex-direction: row;
+}
+
+main:first-child {
+    flex: 1;
+}
+main:last-child {
+    flex: 2;
 }
 </style>
