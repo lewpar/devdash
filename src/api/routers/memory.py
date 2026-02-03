@@ -1,14 +1,14 @@
 from fastapi import APIRouter
-from system.diagnostic import get_ram_usage, get_ram_max, get_ram_free
+
+import psutil
 
 router = APIRouter(prefix="/system")
 
-class MemoryDetails:
-    def __init__(self, used: int, max: int, free: int):
-        self.used = used
-        self.free = free
-        self.max = max
-
 @router.get("/memory")
 def get_memory():
-    return MemoryDetails(get_ram_usage(), get_ram_max(), get_ram_free())
+    memory = psutil.virtual_memory()
+    return {
+        "free": memory.available,
+        "used": memory.used,
+        "total": memory.total
+    }
