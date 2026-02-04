@@ -40,7 +40,7 @@ def get_cpu_usage():
     return {
         "unit": "%",
         "min": 0,
-        "max": 1,
+        "max": 100,
         "current": cpu
     }
 

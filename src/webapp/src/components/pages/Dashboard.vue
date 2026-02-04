@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import Card from 'primevue/card';
-import Knob from 'primevue/knob';
-import { ref } from 'vue';
-
-
-const value = ref(10);
+import { Card } from 'primevue';
+import CPUUsage from '../system/CPUUsage.vue';
 </script>
 
 <template>
@@ -13,7 +9,7 @@ const value = ref(10);
 
         <Card>
             <template #content>
-                <Knob v-model="value" value-template="{value}%" readonly/>
+                <CPUUsage/>
             </template>
         </Card>
     </div>
