@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-import psutil
+import psutil, time
 
 router = APIRouter(prefix="/system")
 
@@ -42,4 +42,13 @@ def get_cpu_usage():
         "min": 0,
         "max": 1,
         "current": cpu
+    }
+
+@router.get("/boot")
+def get_boot_time():
+    boot = psutil.boot_time()
+    current_time = time.time()
+    return {
+        "unit": "seconds",
+        "value": current_time - boot
     }
