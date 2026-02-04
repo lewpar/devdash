@@ -33,3 +33,13 @@ def get_cpu_frequency():
         "max": cpu.max,
         "current": cpu.current
     }
+
+@router.get("/cpu/usage")
+def get_cpu_usage():
+    cpu = psutil.cpu_percent(0.5)
+    return {
+        "unit": "%",
+        "min": 0,
+        "max": 1,
+        "current": cpu
+    }
