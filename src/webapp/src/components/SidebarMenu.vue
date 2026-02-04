@@ -1,18 +1,32 @@
 <script setup lang="ts">
 import { PhChartBarHorizontal } from "@phosphor-icons/vue";
+import { Divider, Card } from "primevue";
 </script>
 
 <template>
     <nav>
-        <ul class="sidebar-menu">
-            <li class="sidebar-menu-item">
-                <RouterLink to="/"><PhChartBarHorizontal :size="20" /> Dashboard</RouterLink>
-            </li>
-        </ul>
+        <Card id="sidebar">
+            <template #content>
+                <h3>DevDash</h3>
+                <Divider/>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <RouterLink to="/"><PhChartBarHorizontal :size="20" /> Dashboard</RouterLink>
+                    </li>
+                </ul>
+            </template>
+        </Card>
     </nav>
 </template>
 
 <style scoped>
+#sidebar {
+    margin: 1rem;
+    height: 100%;
+}
+#sidebar h3 {
+    text-align: center;
+}
 nav {
     display: flex;
     flex-direction: column;
@@ -27,9 +41,6 @@ nav {
     padding-inline-start: 0;
 
     margin: 0;
-    padding: 0.75rem;
-
-    background-color: white;
 }
 
 .sidebar-menu-item a {

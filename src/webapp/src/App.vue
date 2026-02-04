@@ -5,7 +5,9 @@ import SidebarMenu from './components/SidebarMenu.vue';
 <template>
     <main>
         <SidebarMenu/>
-        <RouterView />
+        <div id="page">
+            <RouterView />
+        </div>
     </main>
 </template>
 
@@ -22,5 +24,11 @@ main:first-child {
 }
 main:last-child {
     flex: 2;
+}
+
+#page {
+    flex: 1;
+
+    padding: 1rem;
 }
 </style>
