@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 import psutil, time
 
-router = APIRouter(prefix="/system")
+router = APIRouter(prefix="/system", tags=["System"])
 
 @router.get("/memory/usage")
 def get_memory_usage():
