@@ -24,6 +24,15 @@ def get_disk_usage():
         "total": disk.total
     }
 
+@router.get("/cpu")
+def get_cpu_info():
+    return {
+        "frequency": get_cpu_frequency(),
+        "usage": get_cpu_usage(),
+        "cores": get_cpu_cores()
+    }
+
+
 @router.get("/cpu/frequency")
 def get_cpu_frequency():
     cpu = psutil.cpu_freq()
@@ -36,12 +45,19 @@ def get_cpu_frequency():
 
 @router.get("/cpu/usage")
 def get_cpu_usage():
-    cpu = psutil.cpu_percent(0.5)
+    usage = psutil.cpu_percent(0.5)
     return {
         "unit": "%",
         "min": 0,
         "max": 100,
-        "current": cpu
+        "current": usage
+    }
+
+@router.get("/cpu/cores")
+def get_cpu_cores():
+    cores = psutil.cpu_count()
+    return {
+        "count": cores
     }
 
 @router.get("/boot")
