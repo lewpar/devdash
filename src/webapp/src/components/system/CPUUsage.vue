@@ -28,6 +28,18 @@ onMounted(async () => {
 </script>
 
 <template>
-    <Knob v-if="cpuUsage" v-model="cpuUsage.current" :min="cpuUsage.min" :max="cpuUsage.max" value-template="{value}%" readonly/>
-    <ProgressSpinner v-else/>
+    <div id="cpu-usage">
+        <h4>CPU Usage</h4>
+        <Knob v-if="cpuUsage" v-model="cpuUsage.current" :min="cpuUsage.min" :max="cpuUsage.max" value-template="{value}%" readonly/>
+        <ProgressSpinner v-else/>
+    </div>
 </template>
+
+<style scoped>
+#cpu-usage {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+</style>

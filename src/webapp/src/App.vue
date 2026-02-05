@@ -1,12 +1,21 @@
 <script setup lang="ts">
+import { Card } from 'primevue';
 import SidebarMenu from './components/SidebarMenu.vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 </script>
 
 <template>
     <main>
         <SidebarMenu/>
         <div id="page">
-            <RouterView />
+            <h2>{{ route.meta.title }}</h2>
+            <Card>
+                <template #content>
+                    <RouterView />
+                </template>
+            </Card>
         </div>
     </main>
 </template>
