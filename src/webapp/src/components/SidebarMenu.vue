@@ -8,7 +8,7 @@ import { routes } from "@/router";
     <nav>
         <Card id="sidebar">
             <template #content>
-                <h3>DevDash</h3>
+                <h3>Developer Dashboard</h3>
                 <Divider/>
                 <ul class="sidebar-menu">
                     <li v-for="route in routes" class="sidebar-menu-item">
@@ -24,9 +24,9 @@ import { routes } from "@/router";
 
 <style scoped>
 #sidebar {
-    margin: 1rem;
-    height: 100%;
+    flex: 1;
 }
+
 #sidebar h3 {
     text-align: center;
 }

@@ -8,7 +8,7 @@ const route = useRoute();
 
 <template>
     <main>
-        <SidebarMenu/>
+        <SidebarMenu id="sidebar"/>
         <div id="page">
             <h2>{{ route.meta.title }}</h2>
             <Card>
@@ -28,16 +28,16 @@ main {
     flex-direction: row;
 }
 
-main:first-child {
-    flex: 1;
-}
-main:last-child {
+main #sidebar {
     flex: 2;
-}
-
-#page {
-    flex: 1;
-
     padding: 1rem;
+
+    /* background-color: blue; */
+}
+main #page {
+    flex: 8;
+    padding: 1rem;
+
+    /* background-color: red; */
 }
 </style>
