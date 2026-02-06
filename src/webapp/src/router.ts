@@ -11,6 +11,8 @@ export const routes = [
     component: Dashboard, 
     meta: {
       title: "Dashboard",
+      navLabel: "Dashboard",
+      description: "Overview of your local system",
       icon: PhMonitor
     } 
   },
@@ -18,7 +20,9 @@ export const routes = [
     path: '/system',
     component: System,
     meta: {
-      title: "System",
+      title: "System Resources",
+      navLabel: "System",
+      description: "Monitor CPU, memory, and disk usage in real-time",
       icon: PhChartBarHorizontal
     }
   }

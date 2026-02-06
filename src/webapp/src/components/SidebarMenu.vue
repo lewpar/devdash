@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { PhChartBarHorizontal } from "@phosphor-icons/vue";
 import { Divider, Card } from "primevue";
 import { routes } from "@/router";
 </script>
@@ -13,7 +12,7 @@ import { routes } from "@/router";
                 <ul class="sidebar-menu">
                     <li v-for="route in routes" class="sidebar-menu-item">
                         <RouterLink :to="route.path">
-                            <component :is="route.meta.icon"/> {{ route.meta.title }}
+                            <component :is="route.meta.icon"/> {{ route.meta.navLabel }}
                         </RouterLink>
                     </li>
                 </ul>
