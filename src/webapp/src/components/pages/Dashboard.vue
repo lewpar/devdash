@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import CPUUsage from '../system/CPUUsage.vue';
 </script>
 
 <template>
     <div id="dashboard">
-        <CPUUsage/>
+        Dashboard
     </div>
 </template>
 
