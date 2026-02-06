@@ -67,6 +67,7 @@ nav {
     background-color: oklch(98.5% .002 247.839);
 }
 .sidebar-menu-item a.router-link-active {
-    background-color: rgb(198, 255, 182);
+    color: white;
+    background-color: rgb(99 182 134);
 }
 </style>
