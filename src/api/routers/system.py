@@ -16,7 +16,7 @@ def get_memory_usage():
 
 @router.get("/disk/usage")
 def get_disk_usage():
-    disk = psutil.disk_usage("/")
+    disk = psutil.disk_usage(path="/")
     return {
         "unit": "bytes",
         "free": disk.free,
@@ -45,7 +45,7 @@ def get_cpu_frequency():
 
 @router.get("/cpu/usage")
 def get_cpu_usage():
-    usage = psutil.cpu_percent(0.5)
+    usage = psutil.cpu_percent(interval=0.5)
     return {
         "unit": "%",
         "min": 0,
