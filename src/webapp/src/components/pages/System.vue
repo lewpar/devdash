@@ -74,13 +74,29 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div v-if="cpuInfo">
-        <CPUUsage :usage="cpuInfo.usage"/>
-    </div>
-    <ProgressSpinner v-else/>
+    <div id="page-elements">
+        <template v-if="cpuInfo">
+            <CPUUsage :usage="cpuInfo.usage"/>
+        </template>
+        <ProgressSpinner v-else/>
 
-    <div v-if="diskUsage">
-        <DiskUsage :usage="diskUsage" :max="diskMax"/>
+        <template v-if="diskUsage">
+            <DiskUsage :usage="diskUsage" :max="diskMax"/>
+        </template>
+        <ProgressSpinner v-else/>
     </div>
-    <ProgressSpinner v-else/>
 </template>
+
+<style scoped>
+#page-elements {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 2rem;
+}
+</style>

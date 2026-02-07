@@ -27,6 +27,11 @@ const props = defineProps<{
     display: flex;
     flex-direction: column;
 
-    align-items: center;
+    align-self: start;
+}
+
+#cpu-usage h4 {
+    margin: 0;
+    margin-bottom: 0.5rem;
 }
 </style>
