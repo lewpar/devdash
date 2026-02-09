@@ -8,4 +8,4 @@ router = APIRouter(prefix="/docker", tags=["Docker"])
 def get_docker_containers():
     client = docker.from_env()
     containers = client.containers
-    return containers
+    return containers.list()
