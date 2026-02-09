@@ -24,6 +24,8 @@ echo "> Virtual enviroment activated."
 
 echo "Checking for installed dependencies.."
 
+# FastAPI
+
 pip show --quiet "fastapi"
 exit_status=$?
 
@@ -32,12 +34,24 @@ if [ $exit_status -ne 0 ]; then
     pip install --quiet "fastapi[standard]"
 fi
 
+# PSUtil
+
 pip show --quiet "psutil"
 exit_status=$?
 
 if [ $exit_status -ne 0 ]; then
     echo "psutil dependency missing, installing.."
     pip install --quiet "psutil"
+fi
+
+# Docker
+
+pip show --quiet "docker"
+exit_status=$?
+
+if [ $exit_status -ne 0 ]; then
+    echo "docker dependency missing, installing.."
+    pip install --quiet "docker"
 fi
 
 echo "> Done checking dependencies."

@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware import cors
 
-import routers.system
+from routers.system import router as system_router
+from routers.dogger import router as docker_router
 
 app = FastAPI()
 
@@ -15,4 +16,5 @@ app.add_middleware(cors.CORSMiddleware,
                    allow_methods=["*"],
                    allow_headers=["*"])
 
-app.include_router(routers.system.router)
+app.include_router(system_router)
+app.include_router(docker_router)

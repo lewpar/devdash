@@ -10,4 +10,6 @@ source ./env.sh
 ```py
 fastapi run
 ```
-> To start in dev mode, run `fastapi dev main.py`
+> To start in dev mode, run `fastapi dev main.py
+
+> Ensure your user is part of the `docker` user group, otherwise you will get permission errors.
