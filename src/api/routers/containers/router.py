@@ -5,14 +5,15 @@ import docker # type: ignore
 
 router = APIRouter(prefix="/containers", tags=["Containers"])
 
-@router.get("/containers")
+@router.get("")
 def get_docker_containers():
     client = docker.from_env()
     containers = client.containers.list(all=True)
     serializable_containers = []
     for container in containers:
         serializable_containers.append({
-            "id": container.id
+            "id": container.id,
+            "name": container.name
         })
     return serializable_containers
 
