@@ -5,6 +5,7 @@ import System from './components/pages/System.vue';
 import Containers from './components/pages/Containers.vue';
 
 import { PhMonitor, PhChartBarHorizontal, PhCube } from '@phosphor-icons/vue';
+import type { Component } from 'vue';
 
 export const routes = [
   { 
@@ -14,8 +15,10 @@ export const routes = [
       title: "Dashboard",
       navLabel: "Dashboard",
       description: "Overview of your local system",
-      icon: PhMonitor
-    } 
+      icon: PhMonitor,
+      hideCard: false,
+      hideNav: false
+    }
   },
   {
     path: '/system',
@@ -24,7 +27,9 @@ export const routes = [
       title: "System Resources",
       navLabel: "System",
       description: "Monitor CPU, memory, and disk usage in real-time",
-      icon: PhChartBarHorizontal
+      icon: PhChartBarHorizontal,
+      hideCard: false,
+      hideNav: false
     }
   },
   {
@@ -35,7 +40,8 @@ export const routes = [
       navLabel: "Containers",
       description: "Manage your docker containers",
       icon: PhCube,
-      hideCard: true
+      hideCard: true,
+      hideNav: false
     }
   }
 ];
