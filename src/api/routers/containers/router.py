@@ -1,4 +1,4 @@
-import api.routers.containers.models as models
+import routers.containers.models as models
 
 from fastapi import APIRouter
 import docker
