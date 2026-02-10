@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware import cors
 
-from routers.system import router as system_router
-from api.routers.containers import router as containers_router
+from routers.system.router import router as system_router
+from api.routers.containers.router import router as containers_router
 
 app = FastAPI()
 
