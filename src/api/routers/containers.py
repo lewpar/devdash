@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 import docker
 
-router = APIRouter(prefix="/docker", tags=["Docker"])
+router = APIRouter(prefix="/containers", tags=["Containers"])
 
 @router.get("/containers")
 def get_docker_containers():
@@ -19,10 +19,10 @@ def get_docker_containers():
 @router.get("/create")
 def create_docker_container():
     client = docker.from_env()
-    container = client.containers.create("hello-world")
-    client.containers.run("hello-world")
+    container = client.containers.create("hello-world", name="Hello World")
     return {
-        "id": container.id
+        "id": container.id,
+        "name": container.name
     }
 
 class DeleteDockerContainerModel(BaseModel):
