@@ -1,7 +1,7 @@
-from fastapi import APIRouter
+import api.routers.containers.models as models
 
+from fastapi import APIRouter
 import docker
-import models
 
 router = APIRouter(prefix="/containers", tags=["Containers"])
 
