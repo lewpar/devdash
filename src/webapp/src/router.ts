@@ -5,7 +5,6 @@ import System from './components/pages/System.vue';
 import Containers from './components/pages/Containers.vue';
 
 import { PhMonitor, PhChartBarHorizontal, PhCube } from '@phosphor-icons/vue';
-import type { Component } from 'vue';
 
 export const routes = [
   { 
