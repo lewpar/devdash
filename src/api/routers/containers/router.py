@@ -1,7 +1,7 @@
 import routers.containers.models as models
 
 from fastapi import APIRouter
-import docker
+import docker # type: ignore
 
 router = APIRouter(prefix="/containers", tags=["Containers"])
 
