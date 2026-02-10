@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
 
 import docker
+import models
 
 router = APIRouter(prefix="/containers", tags=["Containers"])
 
@@ -25,11 +25,8 @@ def create_docker_container():
         "name": container.name
     }
 
-class DeleteDockerContainerModel(BaseModel):
-    id: str
-
 @router.post("/delete")
-def delete_docker_container(model: DeleteDockerContainerModel):
+def delete_docker_container(model: models.DeleteDockerContainerModel):
     client = docker.from_env()
     container = client.containers.get(model.id)
     container.remove()
