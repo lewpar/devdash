@@ -10,11 +10,13 @@ import { routes } from "@/router";
                 <h3>Developer Dashboard</h3>
                 <Divider/>
                 <ul class="sidebar-menu">
-                    <li v-for="route in routes" class="sidebar-menu-item">
-                        <RouterLink :to="route.path">
-                            <component :is="route.meta.icon"/> {{ route.meta.navLabel }}
-                        </RouterLink>
-                    </li>
+                    <template v-for="route in routes">
+                        <li v-if="!route.meta.hideNav" class="sidebar-menu-item">
+                            <RouterLink :to="route.path">
+                                <component :is="route.meta.icon"/> {{ route.meta.navLabel }}
+                            </RouterLink>
+                        </li>
+                    </template>
                 </ul>
             </template>
         </Card>

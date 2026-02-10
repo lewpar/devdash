@@ -15,16 +15,14 @@ const route = useRoute();
                 <pre id="subtitle">{{ route.meta.description }}</pre>
             </div>
 
-            <template v-if="!route.meta.hideNav">
-                <template v-if="route.meta.hideCard">
+            <template v-if="route.meta.hideCard">
+                <RouterView />
+            </template>
+            <Card v-else>
+                <template #content>
                     <RouterView />
                 </template>
-                <Card v-else>
-                    <template #content>
-                        <RouterView />
-                    </template>
-                </Card>
-            </template>
+            </Card>
         </div>
     </main>
 </template>
